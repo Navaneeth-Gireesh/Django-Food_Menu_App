@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Details Page
+{% endblock title %}
+
+{% block content %}
+
+<h1 style="text-align: center;">Food Menu</h1>
+
+{% for food in food_items %}
+
+    <div class="row">
+        <div class="col-md-3 offset-md-2">
+            <img class="card" height="200px" width="250px" src="{{ food.item_image }}" alt="">
+        </div>
+        <div class="col-md-4">
+            <h2>{{food.item_name}}</h2>
+            <h6>Price: ₹{{food.item_price}}</h6>
+            
+        </div>
+        <div class="col-md-2">
+            <a class="btn btn-success" href="{% url 'details' food.id %}">More Details</a>
+            <a class="btn btn-success" href="{% url 'edit_details' food.id %}">Edit Details</a>
+        </div>
+    </div>
+        
+{% endfor %}
+{% endblock content %}

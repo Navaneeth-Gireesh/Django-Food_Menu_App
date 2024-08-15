@@ -1,0 +1,4 @@
+# Super User
+username : foodadmin
+Email address: foodadmin@mail.com 
+Password : Superuser@123

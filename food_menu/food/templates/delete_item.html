@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Delete Item
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h3>Delete Item</h3>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="alert alert-warning text-center">
+                            <h4>Are you sure you want to delete "{{ item.item_name }}"?</h4>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-danger">Confirm Delete Item</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
