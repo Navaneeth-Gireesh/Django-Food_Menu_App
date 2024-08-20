@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Profile
+{% endblock title %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h3 class="mt-4">Username: <span class="text-muted">{{ user.username }}</span></h3>
+            <img src="{{ user.profile.image.url }}" class="rounded-circle img-thumbnail" width="150px" height="150px" alt="Profile Image">
+            <h3 class="mt-4">Email Address: <span class="text-muted">{{ user.email }}</span></h3>
+            <h3 class="mt-4">Last Login: <span class="text-muted">{{ user.last_login }}</span></h3>
+            <h3 class="mt-4">Account Created: <span class="text-muted">{{ user.date_joined }}</span></h3>
+            <h4 class="mt-4">Location: <span class="text-muted">{{ user.profile.location }}</span></h4>
+        </div>
+    </div>
+</div>
+{% endblock content %}

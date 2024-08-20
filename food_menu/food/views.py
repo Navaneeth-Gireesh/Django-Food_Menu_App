@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from . models import Item
 from . forms import AddItemForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def index(request):
@@ -38,3 +39,7 @@ def delete_item(request, item_id):
         item.delete()
         return redirect('index')
     return render(request, 'delete_item.html',{'item': item})
+
+@login_required
+def profile_request(request):
+    return render(request, 'profile.html')
