@@ -5,18 +5,18 @@ Details Page
 {% endblock title %}
 
 {% block content %}
-        <h1 style="text-align: center;">{{ food_details.item_name }} Details</h1>
+        <h1 style="text-align: center;">{{ object.item_name }} Details</h1>
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img class="card" src="{{ food_details.item_image }}" height="350px" width="400px" alt="">
+                    <img class="card" src="{{ object.item_image }}" height="350px" width="400px" alt="">
 
                 </div>
                 <div class="col-md-6">
-                    <h2>{{ food_details.item_name }}</h2>
-                    <p>{{ food_details.item_description }}</p>
-                    <h4>Price: ₹{{ food_details.item_price }}</h4>
-                    <a class="btn btn-success" href="{% url 'delete_item' food_details.id %}"> Delete {{food_details.item_name}}</a>
+                    <h2>{{ object.item_name }}</h2>
+                    <p>{{ object.item_description }}</p>
+                    <h4>Price: ₹{{ object.item_price }}</h4>
+                    <a class="btn btn-success" href="{% url 'delete_item' object.id %}"> Delete {{object.item_name}}</a>
 
                 </div>
                 
